@@ -12,7 +12,8 @@ case $1 in
 	;;
 	
 	-pc)
-	echo "Kapcsoló: pc"
+    pictureCount= cat $2 | grep -i img | wc -l
+    echo $pictureCount
 	;;
 
 	-pr)
