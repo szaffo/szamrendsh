@@ -13,7 +13,7 @@ case $1 in
 	
 	-pc)
 	echo "Kapcsoló: pc"
-	cat $2 | grep -i img | wc -l
+	cat $2 | grep -i '<img\>' | wc -l
 	;;
 
 	-pr)
