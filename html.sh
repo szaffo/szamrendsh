@@ -8,6 +8,7 @@ fi
 case $1 in
 	-st)
 	echo "Kapcsoló: st"
+	cat $2 | grep -i Title
 	;;
 	
 	-pc)
