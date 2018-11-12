@@ -1,4 +1,10 @@
 #!/bin/sh
+if [ -z $2 ]; then
+	echo "Kérlek adj meg egy létező fájlnevet"
+	echo "parancs kapcsolók fájl"
+	exit
+fi
+
 case $1 in
 	-st)
 	echo "Kapcsoló: st"
@@ -28,9 +34,3 @@ case $1 in
 
 esac
 
-if [ -z $2 ]; then
-	echo "Kérlek adj meg egy létező fájlnevet"
-	exit
-fi
-
-echo "Done"
