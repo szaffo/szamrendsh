@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [ -z $2 ]; then
 	echo "Kérlek adj meg egy létező fájlnevet"
 	echo "parancs kapcsolók fájl"
@@ -7,8 +7,8 @@ fi
 
 case $1 in
 	-st)
-	echo "Kapcsoló: st"
-	cat $2 | grep -i Title
+	showTitle=`sed -i 's/^ *//' $2 | cat $2 | grep "<title>"`
+    echo "${showTitle:7:-8}"
 	;;
 	
 	-pc)
