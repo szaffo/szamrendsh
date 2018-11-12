@@ -18,6 +18,8 @@ case $1 in
 
 	*)
 	echo "Nem adott meg érvényes kapcsolót"
+	-h)
+	-help)
 	echo "-st (showtitle) kapcsolóval megmutatja a Title címke tartalmát!"
 	echo "-pc (picture count) kapcsolóval meg tudjuk mondani, hogy hány képet használunk és mennyi azok mérete!"
 	echo "-pr (picture replace) egy adott képet kicserél egy másikra, html.sh -pr alma.jpg barack.png"
