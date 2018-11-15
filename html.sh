@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ -z $2 ]; then
 	echo "Kérlek adj meg egy létező fájlnevet"
-	echo "parancs kapcsolók fájl"
+	echo "parancs <kapcsolók> <fájl>"
 	exit
 fi
 
@@ -12,18 +12,23 @@ case $1 in
 	;;
 	
 	-pc)
-    pictureCount= cat $2 | grep -i img | wc -l
+    pictureCount=`cat $2 | grep -i "<img" | wc -l`
     echo $pictureCount
 	;;
 
 	-pr)
-	echo "Kapcsoló: pr"
+    if [ $# -lt 4 ]; then
+        echo "Túl kevés argumentum"l
+        exit
+    fi
+
+    sed -i "s/$3/$4/g" "$2"
+
 	;;
 
 	-pd)
-	echo "Kapcsoló: pd"
+	
 	;;
-
 	*)
 	echo "Nem adott meg érvényes kapcsolót"
 	echo "parancs kapcsolók fájl"
